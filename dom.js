@@ -50,7 +50,7 @@ function finalCalculationResult(finalCal,name,val) {
          nameText.innerText
        }</h1>
                              <h2><span>${val}</span><span>cm</span><sup>2</sup> </h2>
-                             <button id='btn' onclick="convertCentimeterToMeter(this)" class="bg-blue-600 px-2 py-2 rounded-md text-white">convert to m<sup>2</sup></button>
+                             <button  id='btn' onclick="convertCentimeterToMeter(this)" class="bg-blue-600 px-2 py-2 rounded-md text-white">convert to m<sup>2</sup></button>
                          </div>
     
     `;
@@ -62,22 +62,24 @@ function finalCalculationResult(finalCal,name,val) {
    }
     
 }
-
+ let newArr = [];
 function convertCentimeterToMeter(target) {
-      const cmValue = target.parentNode.childNodes[3].childNodes[0].innerText;
-     
+  
+       const re = target.parentNode.childNodes[1].childNodes[1];
+       
+      if (newArr.includes(re)) {
+         alert("you can't convert twice.You already converted to m2")
+      }
+      else {
+        const cmValue = target.parentNode.childNodes[3].childNodes[0].innerText;
 
-      const meterValue = cmValue / 1000;
-      const finalValue = meterValue.toFixed(2);
-      target.parentNode.childNodes[3].childNodes[0].innerText = finalValue;
+        const meterValue = cmValue / 1000;
+        const finalValue = meterValue.toFixed(2);
+        target.parentNode.childNodes[3].childNodes[0].innerText = finalValue;
 
-     
-      target.parentNode.childNodes[3].childNodes[1].innerText = 'm';
-
-      const b = document.getElementById('btn');
-      b.setAttribute('disabled',true)
-
-      
+        target.parentNode.childNodes[3].childNodes[1].innerText = "m";
+        newArr.push(re)
+      }
 
 
 }
