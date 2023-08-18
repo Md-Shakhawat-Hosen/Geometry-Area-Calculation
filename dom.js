@@ -57,3 +57,20 @@ function rectangleCalculate() {
     setCalculationValue("rectangle-area", decimalValue);
     finalCalculationResult("final-calculation-container","rectangle-name", decimalValue);
 }
+
+
+function parallelogramCalculate() {
+  const result = getCalculationValue(
+    "parallelogram-base",
+    "parallelogram-height"
+  );
+
+  const finalValue = result;
+  const decimalValue = finalValue.toFixed(2);
+  setCalculationValue("parallelogram-area", decimalValue);
+  finalCalculationResult(
+    "final-calculation-container",
+    "parallelogram-name",
+    decimalValue
+  );
+}

@@ -22,7 +22,7 @@
             <div class="lg:w-[70%] geometry-container mt-4  grid  lg:grid-cols-3 gap-4">
                  
              <div class="geometry-card  hover:bg-slate-300 bg-blue-100 text-center p-4 rounded-sm">
-                      <img class="flex mx-auto" src="./images/triangle.png" alt="">
+                      <img class="flex mx-auto h-[200px]" src="./images/triangle.png" alt="">
                       <h1 id="triangle-name" class="font-bold my-4">Triangle</h1>
                       <h1>Area (A) = 0.5 X b X h</h1>
                        <h1 class="font-bold">Calculated Area: <span id="triangle-area">00</span></h1>
@@ -33,7 +33,7 @@
                       <button onclick="triangleCalculate()" class="bg-blue-700 px-3 py-2 rounded-xl w-full mt-6 text-white font-bold">Calculate</button>
              </div>
              <div class="geometry-card hover:bg-amber-200 bg-blue-100 text-center p-4 rounded-sm">
-                      <img class="flex mx-auto" src="./images/rectangle.png" alt="">
+                      <img class="flex mx-auto h-[200px]" src="./images/rectangle.png" alt="">
                       <h1 id="rectangle-name"  class="font-bold my-4">Rectangle</h1>
                       <h1>Area (A) =  w X l</h1>
                        <h1 class="font-bold">Calculated Area: <span id="rectangle-area">00</span></h1>
@@ -42,6 +42,17 @@
                         <input id="rectangle-height" class="w-24 px-2 py-2" type="text" placeholder="l" name=""> cm
                       </div>
                       <button onclick="rectangleCalculate()" class="bg-blue-700 px-3 py-2 rounded-xl w-full mt-6 text-white font-bold">Calculate</button>
+             </div>
+             <div class="geometry-card hover:bg-amber-200 bg-blue-100 text-center p-4 rounded-sm">
+                      <img class="flex mx-auto h-[200px]" src="./images/parallelogram.png" alt="">
+                      <h1 id="parallelogram-name"  class="font-bold my-4">Parallelogram</h1>
+                      <h1>Area (A) =  b X h</h1>
+                       <h1 class="font-bold">Calculated Area: <span id="parallelogram-area">00</span></h1>
+                      <div class="space-y-4">
+                        <input id="parallelogram-base" class="w-24 px-2 py-2" type="text" placeholder="b" name=""> cm
+                        <input id="parallelogram-height" class="w-24 px-2 py-2" type="text" placeholder="h" name=""> cm
+                      </div>
+                      <button onclick="parallelogramCalculate()" class="bg-blue-700 px-3 py-2 rounded-xl w-full mt-6 text-white font-bold">Calculate</button>
              </div>
              
             
