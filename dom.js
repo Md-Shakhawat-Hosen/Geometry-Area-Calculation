@@ -83,3 +83,18 @@ function parallelogramCalculate() {
     decimalValue
   );
 }
+function rhombusCalculate() {
+  const result = getCalculationValue(
+    "rhombus-base",
+    "rhombus-height"
+  );
+
+  const finalValue = 0.5*result;
+  const decimalValue = finalValue.toFixed(2);
+  setCalculationValue("rhombus-area", decimalValue);
+  finalCalculationResult(
+    "final-calculation-container",
+    "rhombus-name",
+    decimalValue
+  );
+}
