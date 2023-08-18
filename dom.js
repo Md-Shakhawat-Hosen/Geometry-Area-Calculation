@@ -4,7 +4,9 @@ function getCalculationValue(triangleBaseId, triangleHeightId) {
           const height = document.getElementById(triangleHeightId).value;
 
           const result = parseFloat(base) * parseFloat(height);
-
+           
+        document.getElementById(triangleBaseId).value = "";
+         document.getElementById(triangleHeightId).value = "";
           return result;
 }
 
@@ -107,6 +109,18 @@ function pentagonCalculate() {
   finalCalculationResult(
     "final-calculation-container",
     "pentagon-name",
+    decimalValue
+  );
+}
+function ellipseCalculate() {
+  const result = getCalculationValue("ellipse-base", "ellipse-height");
+
+  const finalValue = 3.14 * result;
+  const decimalValue = finalValue.toFixed(2);
+  setCalculationValue("ellipse-area", decimalValue);
+  finalCalculationResult(
+    "final-calculation-container",
+    "ellipse-name",
     decimalValue
   );
 }
