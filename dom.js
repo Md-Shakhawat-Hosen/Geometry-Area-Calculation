@@ -3,16 +3,25 @@ function getCalculationValue(triangleBaseId, triangleHeightId) {
           const base = document.getElementById(triangleBaseId).value;
           const height = document.getElementById(triangleHeightId).value;
 
-          const result = parseFloat(base) * parseFloat(height);
-           
-        document.getElementById(triangleBaseId).value = "";
-         document.getElementById(triangleHeightId).value = "";
-          return result;
+         if (isNaN(base) || isNaN(height)) {
+          alert('Please input valid number');
+          return;
+         }
+         else {
+           const result = parseFloat(base) * parseFloat(height);
+
+           document.getElementById(triangleBaseId).value = "";
+           document.getElementById(triangleHeightId).value = "";
+           return result;
+         }
 }
 
 
 
 function setCalculationValue(areaId,val) {
+     if (isNaN(val)) {
+      return;
+     }
       const area = document.getElementById(areaId);
       area.innerText = val;
 }
@@ -22,29 +31,35 @@ const arr = [];
 
 function finalCalculationResult(finalCal,name,val) {
   
-    const final = document.getElementById(finalCal);
+   if (isNaN(val)) {
+    return;
+   }
+   else {
+     const final = document.getElementById(finalCal);
 
-    const nameText = document.getElementById(name)
-  
-    const div = document.createElement('div');
+     const nameText = document.getElementById(name);
 
-    if (arr.includes(nameText.innerText)) {
-        alert("You can't add twice")
-    }
-    else {
-      div.innerHTML = `
+     const div = document.createElement("div");
+
+     if (arr.includes(nameText.innerText)) {
+       alert("You can't add twice");
+     } else {
+       div.innerHTML = `
     <div class="flex justify-between mb-3">
-                             <h1><span>${arr.length+1}.</span> ${nameText.innerText}</h1>
+                             <h1><span>${arr.length + 1}.</span> ${
+         nameText.innerText
+       }</h1>
                              <h2><span>${val}</span><span>cm</span><sup>2</sup> </h2>
                              <button id='btn' onclick="convertCentimeterToMeter(this)" class="bg-blue-600 px-2 py-2 rounded-md text-white">convert to m<sup>2</sup></button>
                          </div>
     
     `;
 
-      final.appendChild(div);
+       final.appendChild(div);
 
-      arr.push(nameText.innerText);
-    }
+       arr.push(nameText.innerText);
+     }
+   }
     
 }
 
