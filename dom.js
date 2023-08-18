@@ -98,3 +98,15 @@ function rhombusCalculate() {
     decimalValue
   );
 }
+function pentagonCalculate() {
+  const result = getCalculationValue("pentagon-base", "pentagon-height");
+
+  const finalValue = 0.5 * result;
+  const decimalValue = finalValue.toFixed(2);
+  setCalculationValue("pentagon-area", decimalValue);
+  finalCalculationResult(
+    "final-calculation-container",
+    "pentagon-name",
+    decimalValue
+  );
+}
