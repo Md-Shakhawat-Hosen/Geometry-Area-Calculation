@@ -35,8 +35,8 @@ function finalCalculationResult(finalCal,name,val) {
       div.innerHTML = `
     <div class="flex justify-between mb-3">
                              <h1><span>${arr.length+1}.</span> ${nameText.innerText}</h1>
-                             <h2><span>${val}</span>cm<sup>2</sup> </h2>
-                             <button class="bg-blue-600 px-2 py-2 rounded-md text-white">convert to m<sup>2</sup></button>
+                             <h2><span>${val}</span><span>cm</span><sup>2</sup> </h2>
+                             <button id='btn' onclick="convertCentimeterToMeter(this)" class="bg-blue-600 px-2 py-2 rounded-md text-white">convert to m<sup>2</sup></button>
                          </div>
     
     `;
@@ -48,7 +48,24 @@ function finalCalculationResult(finalCal,name,val) {
     
 }
 
+function convertCentimeterToMeter(target) {
+      const cmValue = target.parentNode.childNodes[3].childNodes[0].innerText;
+     
 
+      const meterValue = cmValue / 1000;
+      const finalValue = meterValue.toFixed(2);
+      target.parentNode.childNodes[3].childNodes[0].innerText = finalValue;
+
+     
+      target.parentNode.childNodes[3].childNodes[1].innerText = 'm';
+
+      const b = document.getElementById('btn');
+      b.setAttribute('disabled',true)
+
+      
+
+
+}
 
 function triangleCalculate() {
   const result = getCalculationValue("triangle-base", "triangle-height");
